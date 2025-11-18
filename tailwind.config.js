@@ -2,51 +2,71 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        geist: ['Geist', 'system-ui', 'sans-serif'],
-        'geist-mono': ['Geist Mono', 'monospace'],
-        mona: ['Mona Sans', 'system-ui', 'sans-serif'],
-        'ibm-plex': ['IBM Plex Sans', 'system-ui', 'sans-serif'],
-        manrope: ['Manrope', 'system-ui', 'sans-serif'],
+    colors: {
+      black: "#000000",
+      white: "#FFFFFF",
+      gray: {
+        50: "#F5F5F5",
+        200: "#E5E5E5",
+        400: "#9CA3AF",
+        900: "#1F1F1F"
       },
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'fade-out': 'fadeOut 0.5s ease-in-out',
-        'slide-in': 'slideIn 0.3s ease-out',
-        'slide-up': 'slideUp 0.3s ease-out',
-        'bounce-in': 'bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-        'spin-slow': 'spin 3s linear infinite',
+      transparent: "transparent",
+      current: "currentColor"
+    },
+    fontFamily: {
+      sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+      mono: ['SF Mono', 'Consolas', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+    },
+    extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '16px',
+          md: '24px'
+        },
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px'
+        }
+      },
+      spacing: {
+        0: '0px',
+        1: '4px',
+        2: '8px',
+        3: '12px',
+        4: '16px',
+        5: '20px',
+        6: '24px',
+        8: '32px',
+        10: '40px',
+        12: '48px',
+        16: '64px',
+        20: '80px',
+      },
+      borderRadius: {
+        xs: '2px',
+        sm: '4px',
+        md: '8px'
+      },
+      boxShadow: {
+        card: '0 1px 3px rgba(0,0,0,0.1)'
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        fadeOut: {
-          '0%': { opacity: '1' },
-          '100%': { opacity: '0' },
-        },
-        slideIn: {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(0)' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(100%)' },
-          '100%': { transform: 'translateY(0)' },
-        },
-        bounceIn: {
-          '0%': { opacity: '0', transform: 'scale(0.3)' },
-          '50%': { transform: 'scale(1.05)' },
-          '70%': { transform: 'scale(0.9)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
-        },
+          '100%': { opacity: '1' }
+        }
       },
-    },
+      animation: {
+        'fade-in': 'fadeIn 0.6s ease-out both'
+      }
+    }
   },
   plugins: [],
 }
